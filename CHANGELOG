@@ -1,0 +1,23 @@
+Version 1.0.1
+- change for #sidebar h3
+
+Version 1.0.2 (never released)
+- smaller changes on the occasion of Dotclear 2.7
+
+Version 1.0.3
+- DIV tag fix for dc-tag.html, dc-category.html, and dc-home.html on the occasion of Dotclear 2.7
+- change for #top in case of using a background picture
+
+Version 1.0.4
+- .post-info-co fix for dc-tag.html, dc-category.html, dc-search and dc-home.html
+
+Version 1.0.5
+- pings_count Genericon correction
+
+Version 2.0.0
+- complete overhaul of template files
+- compatible with new template since Dotclear 2.9
+- iOS10 Safari bug footer width
+
+Version 2.0.1
+- img {max-width:100%;} moved from @media (max-width: 600px) to HTML

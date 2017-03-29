@@ -9,8 +9,8 @@ This is part of theme Fialla for Dotclear 2 blog
 # -- END LICENSE BLOCK -----------------------------------------*/
 
 $this->registerModule(
-	/* Name */			"Fjalla",
+	/* Name */			"FjallaFork2",
 	/* Description*/		"A responsive Dotclear theme",
-	/* Author */			"ben_griffith",
-	/* Version */			'2.0.1'
+	/* Author */			"ben_griffith, Forked and modified by Gnieark https://blog-du-grouik.tinad.fr",
+	/* Version */			'0.6'
 );

@@ -19,27 +19,8 @@
 				<meta name="date" content="{{tpl:BlogUpdateDate iso8601="1"}}" />
 			</tpl:Block>	<!-- meta-entry -->
 		</tpl:Block>	<!-- head-meta -->
-
-		<tpl:Block name="head-dc">
-			<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
-			<meta property="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
-			<meta property="dc.rights" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
-			<meta property="dc.type" content="text" />
-			<meta property="dc.format" content="text/html" />
-			<tpl:Block name="dc-entry">
-				<meta property="dc.title" lang="{{tpl:BlogLanguage}}" content="{{tpl:BlogName encode_html="1"}}<tpl:PaginationIf start="0"> - {{tpl:lang page}} {{tpl:PaginationCurrent}}</tpl:PaginationIf>" />
-				<meta property="dc.description" lang="{{tpl:BlogLanguage}}" content="{{tpl:BlogDescription remove_html="1" encode_html="1"}}" />
-				<meta property="dc.language" content="{{tpl:BlogLanguage}}" />
-				<meta property="dc.date" content="{{tpl:BlogUpdateDate iso8601="1"}}" />
-			</tpl:Block>	<!-- dc-entry -->
-		</tpl:Block>	<!-- head-dc -->
-
+		
 		<tpl:Block name="head-linkrel">
-			<link rel="contents" title="{{tpl:lang Archives}}" href="{{tpl:BlogArchiveURL}}" />
-			<tpl:Categories>
-				<link rel="section" href="{{tpl:CategoryURL}}" title="{{tpl:CategoryTitle encode_html="1"}}" />
-			</tpl:Categories>
-
 			<tpl:Entries no_content="1">
 				<tpl:EntriesHeader>
 					<tpl:Pagination>
@@ -52,13 +33,9 @@
 						</tpl:PaginationIf>
 					</tpl:Pagination>
 				</tpl:EntriesHeader>
-
-				<link rel="chapter" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" />
 			</tpl:Entries>
 
 			<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
-			<link rel="EditURI" type="application/rsd+xml" title="RSD" href="{{tpl:BlogRSDURL}}" />
-			<link rel="meta" type="application/xbel+xml" title="Blogroll" href="{{tpl:BlogrollXbelLink}}" />
 		</tpl:Block>	<!-- head-linkrel -->
 
 		{{tpl:include src="_head.html"}}
@@ -121,7 +98,8 @@
 											 <a href="{{tpl:EntryURL}}#comments" class="comment_count">{{tpl:EntryCommentCount}}</a>
 											 </tpl:EntryIf>
 											 <tpl:EntryIf show_pings="1">
-											 <a href="{{tpl:EntryURL}}#pings" class="ping_count">{{tpl:EntryPingCount}}</a></tpl:EntryIf>
+											 <a href="{{tpl:EntryURL}}#pings" class="ping_count">{{tpl:EntryPingCount}}</a>
+											 </tpl:EntryIf>
 											 <tpl:EntryIf has_attachment="1">
 											 <a href="{{tpl:EntryURL}}#attachments" class="attach_count">{{tpl:EntryAttachmentCount}}</a>
 											 </tpl:EntryIf>
@@ -130,7 +108,6 @@
 											 <li><a href="{{tpl:TagURL}}">{{tpl:TagID}}</a></li>
 											 <tpl:TagsFooter></ul></tpl:TagsFooter>
 											 </tpl:EntryTags> 
-											 </tpl:EntryIf>
 											 </div>
 
 											<tpl:EntriesFooter>

@@ -1,1 +1,43 @@
 {{tpl:extends parent="__layout.html"}}
+
+<tpl:Block name="main-content">
+	<tpl:Entries>
+		<a href="{{tpl:EntryURL}}">
+		<div id="p{{tpl:EntryID}}" class="post-view {{tpl:EntryIfOdd}} {{tpl:EntryIfFirst}}" lang="{{tpl:EntryLang}}" role="article">
+		<h2 class="post-title">{{tpl:EntryTitle encode_html="1"}}</h2>
+
+		<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
+		{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
+
+		<!-- # Entry with an excerpt -->
+		<tpl:EntryIf extended="1">
+			<p> 
+					{{tpl:EntryFirstImage size="s" class="right" with_category="1"}}{{tpl:EntryExcerpt remove_html="1" encode_html="1"}}<span class="readmore-ellipsis">...</span>
+			</p>
+		</tpl:EntryIf>
+		
+		<!-- # Entry without excerpt -->
+		<tpl:EntryIf extended="0">
+			<p>
+					{{tpl:EntryFirstImage size="s" class="right" with_category="1"}}{{tpl:EntryContent remove_html="1" encode_html="1" cut_string="300"}}
+					<span class="readmore-ellipsis">...</span>
+			</p>
+		</tpl:EntryIf>
+		
+			<!-- # --BEHAVIOR-- publicEntryAfterContent -->
+			{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+			</div>
+			</a>
+			
+				<tpl:EntriesFooter>
+					<tpl:Pagination>
+						<p class="pagination"><tpl:PaginationIf end="0"><a href="{{tpl:PaginationURL offset="+1"}}" class="prev">
+						{{tpl:lang previous entries}}</a> - </tpl:PaginationIf>
+						{{tpl:lang page}} {{tpl:PaginationCurrent}} {{tpl:lang of}} {{tpl:PaginationCounter}}
+						<tpl:PaginationIf start="0"> - <a href="{{tpl:PaginationURL offset="-1"}}" class="next">{{tpl:lang next entries}}
+						</a></tpl:PaginationIf></p>
+					</tpl:Pagination>
+				</tpl:EntriesFooter>
+			
+	</tpl:Entries>
+</tpl:Block>	<!-- main-content -->

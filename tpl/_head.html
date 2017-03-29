@@ -1,21 +1,26 @@
 <!-- # to make reading on smartphones possible -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<link rel="stylesheet" type="text/css" href="{{tpl:BlogThemeURL}}/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="{{tpl:BlogThemeURL}}/style2017-03-29.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="{{tpl:BlogQmarkURL}}pf=print.css" media="print" />
 
-<script type="text/javascript" src="{{tpl:BlogQmarkURL}}pf={{tpl:BlogJsJQuery}}/jquery.js"></script>
-<script type="text/javascript" src="{{tpl:BlogQmarkURL}}pf={{tpl:BlogJsJQuery}}/jquery.cookie.js"></script>
- 
- <!-- # to make gototop easier -->
-<script type="text/javascript">
- $(document).ready(function(){
- $('a.scrollToTop').click(function(){
- $('html, body').animate({scrollTop:0}, 'slow');
- return false;
- });
- })
- </script>
- 
 {{tpl:include src="user_head.html"}}
 {{tpl:SysBehavior behavior="publicHeadContent"}}
+
+
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  // tracker methods like "setCustomDimension" should be called before "trackPageView"
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//piwik.tinad.fr/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
